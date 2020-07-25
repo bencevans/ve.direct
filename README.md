@@ -15,6 +15,29 @@ npm install @bencevans/ve.direct
 const VEDirect = require('@bencevans/ve.direct');
 
 (new VEDirect('/dev/...')).on('data', console.log);
+// ...
+// {
+//   PID: 41055,
+//   FW: 150,
+//   'SER#': 'xxxxxxxxxxx',
+//   V: 12790,
+//   I: 800,
+//   VPV: 38870,
+//   PPV: 13,
+//   CS: 3,
+//   MPPT: 2,
+//   OR: 0,
+//   ERR: 0,
+//   LOAD: 'ON',
+//   IL: 200,
+//   H19: 417,
+//   H20: 25,
+//   H21: 183,
+//   H22: 38,
+//   H23: 168,
+//   HSDS: 8
+// }
+// ...
 ```
 
 
