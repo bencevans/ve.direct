@@ -1,6 +1,6 @@
 {
   "name": "@bencevans/ve.direct",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Victron VE.Direct Parser",
   "main": "index.js",
   "scripts": {
