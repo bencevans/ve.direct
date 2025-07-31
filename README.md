@@ -11,10 +11,32 @@ npm install @bencevans/ve.direct
 
 ## Usage
 
-```js
-const VEDirect = require('@bencevans/ve.direct');
+## List Devices
 
-(new VEDirect('/dev/...')).on('data', console.log);
+```js
+const { list } = require("@bencevans/ve.direct");
+
+const devices = await list();
+console.log(devices);
+// [
+// {
+//   path: '/dev/ttyUSB1',
+//   manufacturer: 'VictronEnergy BV',
+//   serialNumber: 'VE3ZJQ53',
+//   pnpId: 'usb-VictronEnergy_BV_VE_Direct_cable_VE3ZJQ53-if00-port0',
+//   locationId: undefined,
+//   vendorId: '0403',
+//   productId: '6015'
+// }
+// ]
+```
+
+## Read Data
+
+```js
+const VEDirect = require("@bencevans/ve.direct");
+
+new VEDirect("/dev/...").on("data", console.log);
 // ...
 // {
 //   PID: 41055,
@@ -40,8 +62,7 @@ const VEDirect = require('@bencevans/ve.direct');
 // ...
 ```
 
-
 ## Related
 
-* [VE.Direct Whitepaper](https://www.victronenergy.com/upload/documents/Whitepaper-Data-communication-with-Victron-Energy-products_EN.pdf)
-* [VE.Direct Protocol FAQ](https://www.victronenergy.com/live/vedirect_protocol:faq)
+- [VE.Direct Whitepaper](https://www.victronenergy.com/upload/documents/Whitepaper-Data-communication-with-Victron-Energy-products_EN.pdf)
+- [VE.Direct Protocol FAQ](https://www.victronenergy.com/live/vedirect_protocol:faq)
