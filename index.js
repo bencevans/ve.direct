@@ -6,7 +6,8 @@ class VEDirect extends EventEmitter {
   constructor(path) {
     super();
 
-    this.serial = new SerialPort(path, {
+    this.serial = new SerialPort({
+      path,
       baudRate: 19200,
       dataBits: 8,
       parity: "none",
