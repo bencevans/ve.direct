@@ -14,9 +14,9 @@ npm install @bencevans/ve.direct
 ## List Devices
 
 ```js
-const VEDirect = require("@bencevans/ve.direct");
+const { list } = require("@bencevans/ve.direct");
 
-const devices = await VEDirect.list();
+const devices = await list();
 console.log(devices);
 // [
 // {
