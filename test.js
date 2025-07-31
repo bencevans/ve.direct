@@ -1,6 +1,6 @@
 const test = require("tape");
-const SerialPort = require("serialport");
 const VEDirectParser = require("./parser");
+const { DelimiterParser } = require('@serialport/parser-delimiter')
 
 const validMessage = Buffer.from([
     0x0d, 0x0a, 0x50, 0x49, 0x44, 0x09, 0x30, 0x78, 0x32, 0x30, 0x33, 0x0d, 0x0a, 0x56, 0x09, 0x32, //  |..PID.0x203..V.2|
@@ -20,7 +20,7 @@ test('parser.checksum', t => {
 })
 
 test("parser", (t) => {
-    const rl = new SerialPort.parsers.Delimiter({
+    const rl = new DelimiterParser({
         delimiter: Buffer.from([0x0d, 0x0a], 'hex'),
         includeDelimiter: false
     })

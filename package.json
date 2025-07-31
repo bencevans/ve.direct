@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/bencevans/ve.direct#readme",
   "dependencies": {
-    "serialport": "^9.0.0"
+    "@serialport/parser-delimiter": "^13.0.0",
+    "serialport": "^13.0.0"
   },
   "devDependencies": {
     "tape": "^5.0.1"
