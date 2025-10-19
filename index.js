@@ -1,5 +1,6 @@
 const { SerialPort } = require("serialport");
 const VEDirectParser = require("./parser");
+const { DelimiterParser } = require("@serialport/parser-delimiter");
 const { EventEmitter } = require("events");
 
 class VEDirect extends EventEmitter {
@@ -13,7 +14,7 @@ class VEDirect extends EventEmitter {
       parity: "none",
     });
 
-    this.rl = new SerialPort.parsers.Delimiter({
+    this.rl = new DelimiterParser({
       delimiter: Buffer.from([0x0d, 0x0a], "hex"),
       includeDelimiter: false,
     });
