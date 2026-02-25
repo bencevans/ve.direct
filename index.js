@@ -25,6 +25,12 @@ class VEDirect extends EventEmitter {
       this.emit("data", data);
     });
 
+    // Bubble up all SerialPort events
+    this.serial.on("open", () => this.emit("open"));
+    this.serial.on("close", () => this.emit("close"));
+    this.serial.on("error", (err) => this.emit("error", err));
+    this.serial.on("drain", () => this.emit("drain"));
+
     this.serial.pipe(this.rl).pipe(this.ve);
   }
 }
